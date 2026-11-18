@@ -26,7 +26,7 @@ class Personnage
                 pv = 0;
             }
         }
-        int attaque(){  return pa = rand() % 10;}
+        virtual int attaque(){  return pa = rand() % 10;}
         bool EstVivant() {return pv > 0;}
         void affiche(){
             std::cout << "Creature - PV : " << pv << ", PA : " << pa
@@ -50,7 +50,7 @@ class Guerrier : public Personnage
             return nom;
         }
 
-        int attaque() {
+        int attaque() override {
             std::cout << nom << " coup d'épée " << std::endl;
             return pa + 2;
         }
@@ -72,7 +72,7 @@ class Archer : public Personnage
             return nom;
         }
 
-        int attaque (){
+        int attaque () override {
             std::cout << nom << " coup de flèche " << std::endl;
             return pa + 5;
         }
@@ -93,7 +93,7 @@ class Mage : public Personnage
             return nom;
         }
 
-        int attaque(){
+        int attaque() override {
             std::cout << nom << " boule de feu " << std::endl;
             return (int) (pa * 1.25);
         }
@@ -106,6 +106,10 @@ class Dragon : public Personnage
         Dragon() : Personnage(){}
         Dragon(int pv, int pa, int niveau) : Personnage(pv,pa,niveau){}
         Dragon(Dragon &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
+        int attaque() override {
+            std::cout << "Souffle du dragon" << std::endl;
+            return pa + 4;
+        }
 };
 
 class Gobelin : public Personnage
@@ -115,6 +119,10 @@ class Gobelin : public Personnage
         Gobelin() : Personnage(){}
         Gobelin(int pv, int pa, int niveau) : Personnage(pv,pa,niveau){}
         Gobelin(Gobelin &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
+        int attaque() override {
+            std::cout << "Attaque sournoise du gobelin" << std::endl;
+            return pa + 1;
+        }
 };
 
 class Troll : public Personnage
@@ -125,6 +133,10 @@ class Troll : public Personnage
         Troll() : Personnage(){}
         Troll(int pv, int pa, int niveau) : Personnage(pv,pa,niveau){}
         Troll(Troll &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
+        int attaque() override {
+            std::cout << "Coup lourd du troll" << std::endl;
+            return pa + 3;
+        }
 };
 
 #endif
