@@ -1,50 +1,3 @@
-<<<<<<< HEAD
-# POO-Prosit4
-
-```mermaid
-classDiagram
-class Personnage {
-    -PV : int
-    -DAMAGE : int
-    +subitDegats() void
-    +attaque() int
-    +affiche() void
-    +envie() booléen
-}
-
-class Guerrier {
-    -Nom : string
-    +CoupDe() int
-}
-
-class Mage {
-    -Nom : string
-}
-
-class Archer {
-    -Nom : string
-}
-
-class Dragon {
-    +BDF() int    
-}
-
-class Gobelin {
-    
-}
-
-class Troll {
-    
-}
-
-Personnage<|--Guerrier
-Personnage<|--Mage
-Personnage<|--Archer
-Personnage<|--Dragon
-Personnage<|--Gobelin
-Personnage<|--Troll
-
-=======
 # POO-Prosit4
 
 ## CESI & Dragons - L'armée s'agrandit
@@ -171,6 +124,3 @@ Personnage<|--Archer
 Personnage<|--Dragon
 Personnage<|--Gobelin
 Personnage<|--Troll
-
->>>>>>> 7d7ae054f1e9b58f6ae0a4512530bffd7825135d
-```
