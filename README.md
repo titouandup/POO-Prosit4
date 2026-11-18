@@ -1,5 +1,54 @@
 # POO-Prosit4
 
+## CESI & Dragons - L'armée s'agrandit
+
+### Présentation
+
+Dans ce prosit, le projet CESI & Dragons évolue avec l'ajout de nouveaux personnages. Chaque personnage possède ses propres caractéristiques et son propre mode d'attaque.
+
+L'objectif est d'unifier ces implémentations grâce aux mécanismes de la programmation orientée objet afin de disposer d'un moteur de combat commun et facilement maintenable.
+
+### Objectif
+
+Comment utiliser une méthode générique de combat tout en conservant les attaques spécifiques de chaque personnage ?
+
+### Mots-clés
+
+- Héritage
+- Polymorphisme
+- Virtualisation
+- Fonctions virtuelles
+- Surcharge de fonctions
+- Fonctions génériques
+
+### Contraintes
+
+- Conserver les types d'attaque propres à chaque personnage
+- Utiliser le même moteur de combat
+- Uniformiser l'écriture du code
+- Faciliter l'ajout de nouveaux personnages
+
+### Architecture
+
+La classe `Personnage` représente le modèle commun à tous les combattants. Elle centralise les caractéristiques et les fonctions communes.
+
+Les classes suivantes héritent de `Personnage` :
+
+- `Guerrier`
+- `Archer`
+- `Mage`
+- `Dragon`
+- `Gobelin`
+- `Troll`
+
+Chaque classe fille peut spécialiser son attaque grâce au polymorphisme, tandis que le programme principal manipule les personnages à travers des pointeurs vers `Personnage`.
+
+### Livrables
+
+- Diagramme des classes
+- Implémentation des personnages
+- Programme principal complété
+
 ```mermaid
 classDiagram
 class Personnage {
