@@ -20,7 +20,7 @@ class Personnage
         int getPV(){return pv;}
         int getPA(){return pa;}
         int getNiveau(){return niveau;}
-        void subitDegat(int degat){
+        void subitDegats(int degat){
             pv = pv - degat;
             if (pv < 0) {
                 pv = 0;
@@ -89,7 +89,7 @@ class Dragon : public Personnage
     private:
     public:
         Dragon() : Personnage(){}
-        Dragon(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau){}
+        Dragon(int pv, int pa, int niveau) : Personnage(pv,pa,niveau){}
         Dragon(Dragon &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
 };
 
@@ -98,7 +98,7 @@ class Gobelin : public Personnage
     private:
     public:
         Gobelin() : Personnage(){}
-        Gobelin(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau){}
+        Gobelin(int pv, int pa, int niveau) : Personnage(pv,pa,niveau){}
         Gobelin(Gobelin &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
 };
 
@@ -108,7 +108,7 @@ class Troll : public Personnage
         std::string nom;
     public:
         Troll() : Personnage(){}
-        Troll(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau){}
+        Troll(int pv, int pa, int niveau) : Personnage(pv,pa,niveau){}
         Troll(Troll &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
 };
 
