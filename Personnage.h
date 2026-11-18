@@ -13,7 +13,9 @@ class Personnage
         Personnage() : pv(10), pa(5), niveau(1) {}
         Personnage(int pv, int pa, int niveau) : pv(pv), pa(pa), niveau(niveau) {}
         Personnage(Personnage &Import) : pv(Import.pv), pa(Import.pa), niveau(Import.niveau) {}
-        ~Personnage(){}
+        virtual ~Personnage(){}
+        void Jesuis(void){ std::cout << "Je suis" << std::endl;}
+        virtual int attaque(void) = 0;
         void setPV(int NouveauPV){pv = NouveauPV;}
         void setPA(int NouveauPA){pa = NouveauPA;}
         void setNiveau(int NouveauNiveau){niveau = NouveauNiveau;}        
@@ -51,7 +53,7 @@ class Guerrier : public Personnage
         }
 
         int attaque() override {
-            std::cout << nom << " coup d'épée " << std::endl;
+            std::cout  << " coup d'épée " << std::endl;
             return pa + 2;
         }
         
@@ -73,7 +75,7 @@ class Archer : public Personnage
         }
 
         int attaque () override {
-            std::cout << nom << " coup de flèche " << std::endl;
+            std::cout << " coup de flèche " << std::endl;
             return pa + 5;
         }
 };
@@ -94,7 +96,7 @@ class Mage : public Personnage
         }
 
         int attaque() override {
-            std::cout << nom << " boule de feu " << std::endl;
+            std::cout << " boule de feu " << std::endl;
             return (int) (pa * 1.25);
         }
 };
