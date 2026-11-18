@@ -7,6 +7,7 @@ class Personnage
 
 class Guerrier : public Personnage
 {
+    
 };
 
 class Archer : public Personnage
