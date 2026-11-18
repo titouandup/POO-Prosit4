@@ -52,23 +52,23 @@ Chaque classe fille peut spécialiser son attaque grâce au polymorphisme, tandi
 ```mermaid
 classDiagram
 class Personnage {
-    -PV : int
-    -DAMAGE : int
-    -Niveau : int
+    #pv : int
+    #pa : int
+    #niveau : int
     +Personnage()
     +Personnage(int, int, int)
     +Personnage(Personnage)
     +~Personnage()
     +setPV() void
-    +setDAMAGE() void
+    +setPA() void
     +setNiveau() void
     +getPV() int
-    +getDAMAGE() int
+    +getPA() int
     +getNiveau() int
     +subitDegats() void
-    +attaque() int
+    +attaque() int <<virtual>>
     +affiche() void
-    +envie() booléen
+    +EstVivant() bool
 }
 
 class Guerrier {
@@ -78,7 +78,7 @@ class Guerrier {
     +Guerrier(Guerrier)
     +setNom() void
     +getNom() string
-    +CoupDe() int
+    +attaque() int <<override>>
 }
 
 class Mage {
@@ -88,6 +88,7 @@ class Mage {
     +setNom() void
     +getNom() string
     -Nom : string
+    +attaque() int <<override>>
 }
 
 class Archer {
@@ -97,25 +98,28 @@ class Archer {
     +setNom() void
     +getNom() string
     -Nom : string
+    +attaque() int <<override>>
 }
 
 class Dragon {
     +Dragon()
     +Dragon(int, int, int)
     +Dragon(Dragon)
-    +BDF() int    
+    +attaque() int <<override>>
 }
 
 class Gobelin {
     +Gobelin()
     +Gobelin(int, int, int)
     +Gobelin(Gobelin)
+    +attaque() int <<override>>
 }
 
 class Troll {
     +Troll()
     +Troll(int, int, int)
     +Troll(Troll)
+    +attaque() int <<override>>
 }
 
 Personnage<|--Guerrier
