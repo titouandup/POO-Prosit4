@@ -3,6 +3,18 @@
 
 class Personnage
 {
+private:
+    int pv;
+    int pa;
+    int niveau;
+
+public:
+
+bool EstVivant()
+    {
+        return pv > 0;
+    }
+
 };
 
 class Guerrier : public Personnage
