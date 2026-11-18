@@ -49,6 +49,11 @@ class Guerrier : public Personnage
         std::string getNom (){
             return nom;
         }
+
+        int attaque() {
+            std::cout << nom << " coup d'épée " << std::endl;
+            return pa + 2;
+        }
         
 };
 
@@ -66,6 +71,11 @@ class Archer : public Personnage
         std::string getNom (){
             return nom;
         }
+
+        int attaque (){
+            std::cout << nom << " coup de flèche " << std::endl;
+            return pa + 5;
+        }
 };
 
 class Mage : public Personnage
@@ -81,6 +91,11 @@ class Mage : public Personnage
         }
         std::string getNom (){
             return nom;
+        }
+
+        int attaque(){
+            std::cout << nom << " boule de feu " << std::endl;
+            return (int) (pa * 1.25);
         }
 };
 
