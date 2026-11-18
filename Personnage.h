@@ -3,7 +3,7 @@
 
 class Personnage
 {
-    private:
+    protected:
         int pv;
         int pa;
         int niveau;
@@ -37,26 +37,79 @@ class Personnage
 
 class Guerrier : public Personnage
 {
+    private:
+        std::string nom;
+    public:
+        Guerrier() : Personnage(), nom("Non appelé"){}
+        Guerrier(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau), nom(nom){}
+        Guerrier(Guerrier &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau), nom(Combattant.nom){}
+        void setNom (std::string nouveauNom){
+            nom = nouveauNom;
+        }
+        std::string getNom (){
+            return nom;
+        }
+        
 };
 
 class Archer : public Personnage
 {
+    private:
+        std::string nom;
+    public:
+        Archer() : Personnage(), nom("Non appelé"){}
+        Archer(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau), nom(nom){}
+        Archer(Archer &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau), nom(Combattant.nom){}
+        void setNom (std::string nouveauNom){
+            nom = nouveauNom;
+        }
+        std::string getNom (){
+            return nom;
+        }
 };
 
 class Mage : public Personnage
 {
+    private:
+        std::string nom;
+    public:
+        Mage() : Personnage(), nom("Non appelé"){}
+        Mage(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau), nom(nom){}
+        Mage(Mage &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau), nom(Combattant.nom){}
+        void setNom (std::string nouveauNom){
+            nom = nouveauNom;
+        }
+        std::string getNom (){
+            return nom;
+        }
 };
 
 class Dragon : public Personnage
 {
+    private:
+    public:
+        Dragon() : Personnage(){}
+        Dragon(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau){}
+        Dragon(Dragon &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
 };
 
 class Gobelin : public Personnage
 {
+    private:
+    public:
+        Gobelin() : Personnage(){}
+        Gobelin(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau){}
+        Gobelin(Gobelin &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
 };
 
 class Troll : public Personnage
 {
+    private:
+        std::string nom;
+    public:
+        Troll() : Personnage(){}
+        Troll(int pv, int pa, int niveau, std::string nom) : Personnage(pv,pa,niveau){}
+        Troll(Troll &Combattant) : Personnage(Combattant.pv,Combattant.pa,Combattant.niveau){}
 };
 
 #endif
